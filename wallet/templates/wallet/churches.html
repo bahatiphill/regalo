@@ -1,0 +1,41 @@
+{% extends "wallet/base.html" %}
+{% load  staticfiles%}
+
+{% block content %}
+
+<br>
+<br>
+<div class="row">
+    <div class="col-md-1">
+    
+    </div>
+    <div class="col-md-10">
+        
+        <div class="row">
+                
+            {% if churches %}
+
+                {% for church in churches %}
+                <div class="col-md-4">
+                      <div class="card">
+                        <div class="card-header">
+                          <h3>{{church.username}}</h3>
+                        </div>
+                        <div class="card-body">
+                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                          <a href="{% url 'gutura' church.slug %}" class="btn">offer</a>
+                        </div>
+                      </div>
+                    </div>
+                {% endfor %}
+            
+            {% endif %}
+        </div>
+    </div>
+    <div class="col-md-1">
+    
+    </div>
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,30 @@
+{% extends "wallet/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<div class="row text-center">
+    <div class="col-sm-6 col-sm-offset-3">
+    <br><br> <h1 style="color:#FF4500">ERROR</h1>
+<br>
+<br>
+<br>
+<h2 style="color:crimson; font-size:20px">sending payment request error</h2>
+<span>because of: </span> 
+<p style="font-size:15px">{{cause}}</p>
+
+<br>
+
+<p> Back withdraw Form </p>
+ <a class="btn-primary btn-lg" href="{% url 'withdraw' %}">Back</a>
+ <br>
+</div>
+</div>
+
+
+{% endblock content %}
