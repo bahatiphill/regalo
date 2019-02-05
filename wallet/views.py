@@ -204,7 +204,12 @@ def kubikuza(request):
 def dash(request):
     
     ikofi = Ikofi.objects.all()
-    return render(request, 'wallet/dash.html', {'obj': ikofi})
+    churches = []
+    for item in ikofi:
+        if not item.church.is_superuser:
+            churches.append(item)
+
+    return render(request, 'wallet/dash.html', {'obj': churches})
 
 @login_required(login_url='login')
 def overview(request):
