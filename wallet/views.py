@@ -219,3 +219,15 @@ def overview(request):
 
     return render(request, 'wallet/overview.html', {'abatuye': abatuye, 'amount':amount})
 
+
+@user_passes_test(lambda u: u.is_superuser, login_url='login')
+def delete_(request, church_slug):
+    church_to_del = Churches.objects.filter(slug=church_slug).first()
+    return render(request, 'wallet/delete_.html', {'church':church_to_del})
+
+@user_passes_test(lambda u: u.is_superuser, login_url='login')
+def delete_church(request, church_slug):
+    church = Churches.objects.get(slug=church_slug)
+    church.delete()
+    print('church deleted')
+    return redirect('/dash/')

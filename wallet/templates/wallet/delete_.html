@@ -1,0 +1,26 @@
+{% extends "wallet/base.html" %}
+{% load  staticfiles%}
+
+
+{% block content %}
+
+<br>
+<br>
+
+<div class="row">
+            
+    <div class="col-md-1">    
+    </div>
+
+    <div class="col-md-10">
+        <h3> <strong>Are you sure, you want to delete this Church</strong></h3>
+        <br>
+        <a class="btn btn-danger" href="{% url 'dashboard' %}" role="button">Cancel</a>
+        <a class="btn btn-primary" href="{% url 'delete_church' church_slug=church.slug  %}" role="button">Yes</a>
+        
+    </div>
+    <div class="col-md-1">    
+    </div>
+</div>  
+
+{% endblock content %}
