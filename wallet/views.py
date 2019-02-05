@@ -1,10 +1,7 @@
 import json
 import logging
-
-
+from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
-
-
 from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
 from django.views.generic.base import TemplateView
@@ -203,8 +200,6 @@ def kubikuza(request):
     return render(request, 'wallet/kubikuza-form.html', {'form':form})
 
 
-
-
 @user_passes_test(lambda u: u.is_superuser, login_url='login')
 def dash(request):
     
@@ -214,8 +209,13 @@ def dash(request):
 @login_required(login_url='login')
 def overview(request):
     
-    abatuye = Abatuye.objects.filter(to_church=request.user).filter(successful=True).reverse()[:5]
-    amount = Ikofi.objects.get(church=request.user)
-    
+    try:
+        abatuye = Abatuye.objects.filter(to_church=request.user).filter(successful=True).reverse()[:5]
+        amount = Ikofi.objects.get(church=request.user)
+
+    except Exception as e:
+        print('you dont have a')
+        return HttpResponse('There is some error on server. return back')
+
     return render(request, 'wallet/overview.html', {'abatuye': abatuye, 'amount':amount})
 
