@@ -22,9 +22,11 @@ urlpatterns = [
     path('pending/', views.pendingPayment.as_view(), name="pendingPayment"),
     path('churches/', views.ChurchesList.as_view(), name='churches_list'),
     path('dash/', views.dash, name="dashboard"),
+    path('dash/<church_slug>', views.churches_details,  name='church_details'),
     path('delete/<church_slug>', views.delete_, name='delete_'),
     path('delete/<church_slug>/confirmed/', views.delete_church ,name='delete_church'),
     path('overview/', views.overview, name="overview"),
     path('overview/withdraw', views.kubikuza, name="withdraw"),
     path('sentPayment/', views.sentmoney.as_view() ,name='sentPayment'),
+
 ]

@@ -236,3 +236,12 @@ def delete_church(request, church_slug):
     church.delete()
     print('church deleted')
     return redirect('/dash/')
+
+
+@user_passes_test(lambda u: u.is_superuser, login_url='login')
+def churches_details(request, church_slug):
+
+    church = Churches.objects.get(slug=church_slug)
+    abatuye = Abatuye.objects.filter(to_church=church).filter(successful=True).reverse()[:5]
+
+    return render(request, 'wallet/churches_details.html', {'abatuye':abatuye})

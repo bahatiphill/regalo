@@ -33,6 +33,8 @@
 
                              </h5>
                               <p class="card-text">
+                                    <a style="color:blue;" href="{% url 'church_details' church_slug=item.church.slug %}">details</a> 
+                                    <br>
                                  <a style="color:red;" href="{% url 'delete_' church_slug=item.church.slug %}">delete</a> 
                               </p>
                             </div>
