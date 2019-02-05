@@ -1,0 +1,63 @@
+{% extends "wallet/base.html" %}
+{% load  staticfiles%}
+
+
+
+{% block content %}
+
+    <br>
+    <br>
+    <h2 style="text-align: center; color:brown"> Dashboard</h2> <br>
+    <hr>
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10">
+            
+            <div class="row">
+                    <div class="col-md-1">
+                        </div>
+
+                <div class="col-md-10">
+                            
+                <p style="font-size:20px;"><u>Balance:</u> &nbsp &nbsp {{amount.amount}}</p> 
+                <h3>Recent offers</h3>
+                <br>
+                {% if abatuye %}                
+                    
+                    <table style="width:70%">
+                            <tr>
+                              <th>AMAZINA</th>
+                              <th>AMAFRANGA</th> 
+                              <th>IGIHE</th>
+                            </tr>
+                            {% for aba in abatuye %}
+                            <tr>
+                              <td>{{aba.name}}</td>
+                              <td>{{aba.amount}}</td>
+                              <td>{{aba.timestamp}}</td>
+                            </tr>
+                            {% endfor %}
+                          </table>
+                          
+                        <br>
+                    
+                  
+                {% endif %}
+                <br>
+                <a href="{% url 'withdraw' %}" class="btn btn-default btn-lg" role="button" aria-disabled="true">withdraw</a>
+            </div>
+            <div class="col-md-1">
+                    <a href="{% url 'logout' %}" class="btn btn-secondary btn-sm active" role="button" aria-pressed="true">Log Out</a>
+                </div>
+            </div>
+        </div>
+               
+        <div class="col-md-1">
+
+        </div>
+    
+    </div>
+  
+{% endblock content %}
+

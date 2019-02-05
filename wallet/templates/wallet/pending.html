@@ -1,0 +1,44 @@
+
+{% extends "wallet/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+	<div class="row text-center">
+        <div class="col-sm-6 col-sm-offset-3">
+        <br><br> <h2 style="color:#0fad00">Pending</h2>
+        <img style=" height: 200px; width: 50%;" src="{% static 'images/pending.jpg' %}">
+        <p style="font-size:20px;color:#5C5C5C;">
+                Urakoze cyane kuba ugerageje gutura ukoresheje <b>RegaloTrust</b>.<br /> 
+                ubu transaction yawe iri Pending, dutegereje ko ubanza ukayemeza kugira ngo amafranga abashe kugera ku rusengero rwawe. <br />
+                
+                kuri telephone yawe urahita ubona aga pop-up kagusaba guhitamo
+                transaction umaze kugerageza gukora.
+                <br>
+                <img style="height: 700px; width: 70%;" src="{% static 'images/pend.jpeg' %}">
+
+                
+              
+        </p>
+        <br>
+        <p>
+                niba katigeze kaza kanda <b style="font-size:40px; color:#0fad00";>*182*7#</b> maze ukomeze!
+        </p>
+
+
+        <p style="font-size:20px;color:#5C5C5C;">niba Transaction yawe yakunze uraza kwakira SMS ikubwira ko amafranga watuye byakunze </p>
+        <!--<a href="" class="btn btn-success">     Log in      </a>-->
+    <br><br>
+        </div>
+        
+	</div>
+</div>
+
+{% endblock content %}

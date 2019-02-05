@@ -1,0 +1,7 @@
+export SECRET_KEY='im%d81$t&2^21cnb4$40a$szp+4ihjq+kt&=l8q_lkp@+129ds'
+export account_no='250180000050'
+#export partnerpassword='901998s$@!%-*RKE!@q_J3q|^xzX'
+export partnerpassword='901998s$@!%-*RKE!@q_J3q|^xzX'
+export db_name='regalo'
+export db_user='regalo_user'
+export db_pass='DBregalo.09'

@@ -1,0 +1,55 @@
+{% extends "wallet/base.html" %}
+{% load  staticfiles%}
+
+
+{% block content %}
+
+    <br>
+    <br>
+    <h2 style="text-align: center; color:brown"> Churches</h2> <br>
+    <a class="btn btn-primary" href="{% url 'add_new_church' %}" role="button">Add Church</a>
+    <hr>
+    <div class="row">
+            
+        <div class="col-md-1">
+        
+        </div>
+        <div class="col-md-10">
+            
+            <div class="row">
+                    
+                {% if obj %}
+    
+                    {% for item in obj %}
+                    <div class="col-md-4">
+
+                        
+                        <div class="card">
+                            <div class="card-header">
+                              <h3>{{item.church.username}}</h3>
+                            </div>
+                            <div class="card-body">
+                              <h5 class="card-title"> amount: <b>{{item.amount}}</b>
+
+                             </h5>
+                              <p class="card-text">
+                                  
+                              </p>
+                            </div>
+                          </div>
+    
+                    </div>
+                    {% endfor %}
+                
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-md-1">
+                
+        </div>
+
+    
+    </div>
+  
+{% endblock content %}
+
